@@ -27,7 +27,7 @@ public class Climb {
 	@Column(name = "route_style")
 	private String routeStyle;
 
-	private int pitches;
+	private Integer pitches;
 
 	private String description;
 
@@ -44,14 +44,14 @@ public class Climb {
 	private String cragName;
 
 	@Column(name = "area_latitude")
-	private double areaLatitude;
+	private Double areaLatitude;
 
 	@Column(name = "area_longitude")
-	private double areaLongitude;
+	private Double areaLongitude;
 
-	private boolean ticked;
+	private Boolean ticked;
 
-	private int stars;
+	private Integer stars;
 
 	@Column(name = "date_climbed")
 	private LocalDate dateClimbed;

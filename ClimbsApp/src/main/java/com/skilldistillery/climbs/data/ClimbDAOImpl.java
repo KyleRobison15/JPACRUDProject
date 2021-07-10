@@ -16,7 +16,6 @@ public class ClimbDAOImpl implements ClimbDAO {
 
 	@PersistenceContext
 	private EntityManager em;
-	private String jpql;
 	
 	@Override
 	public Climb findById(int id) {
@@ -26,7 +25,7 @@ public class ClimbDAOImpl implements ClimbDAO {
 	@Override
 	public List<Climb> getAllClimbs() {
 		
-		jpql = "SELECT c FROM climb c ORDER BY c";
+		String jpql = "SELECT c FROM Climb c";
 		List<Climb> climbs = em.createQuery(jpql, Climb.class).getResultList();
 		
 		return climbs;
