@@ -1,5 +1,7 @@
 package com.skilldistillery.climbs.controllers;
 
+import javax.servlet.ServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -58,10 +60,42 @@ public class ClimbController {
 	}
 	
 	@RequestMapping(path = "climbAdded.do", method = RequestMethod.GET)
-	public String addClimb(Climb climb) {
+	public String confirmAdd(Climb climb) {
 		return"addConfirmed";
 	}
 	
+	@RequestMapping(path = "updateForm.do", params = "id", method = RequestMethod.GET)
+	public String updateClimb(int id, Model model) {
+		Climb existingClimb = dao.findById(id);
+		model.addAttribute("climb", existingClimb);
+		return"updateClimb";
+	}
+	
+	@RequestMapping(path = "updateClimb.do", method = RequestMethod.POST)
+	public String updateClimb(Climb climb, Model model, RedirectAttributes redir) {
+		dao.updateClimb(climb);
+		redir.addFlashAttribute("climb", climb);
+		return"redirect:updateConfirmed.do";
+	}
+	
+	@RequestMapping(path = "updateConfirmed.do", method = RequestMethod.GET)
+	public String confirmUpdate(Climb climb) {
+		return"updateConfirmed";
+	}
+	
+	@RequestMapping(path = "deleteClimb.do", params = "id", method = RequestMethod.GET)
+	public String deleteClimbConfirmation(int id, Model model) {
+		Climb existingClimb = dao.findById(id);
+		model.addAttribute("climb", existingClimb);
+		return"confirmDelete";
+	}
+	
+	@RequestMapping(path = "confirmDelete.do", method = RequestMethod.POST)
+	public String deleteClimb(int id, Model model) {
+		Climb existingClimb = dao.findById(id);
+		dao.deleteClimb(existingClimb);
+		return"deleteSuccessful";
+	}
 	
 	
 	

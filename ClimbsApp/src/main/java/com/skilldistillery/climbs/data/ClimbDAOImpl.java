@@ -1,5 +1,6 @@
 package com.skilldistillery.climbs.data;
 
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -118,14 +119,30 @@ public class ClimbDAOImpl implements ClimbDAO {
 
 	@Override
 	public boolean updateClimb(Climb climb) {
-		// TODO Auto-generated method stub
-		return false;
+		DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		Climb managedClimb = em.find(Climb.class, climb.getId());
+		managedClimb.setRouteName(climb.getRouteName());
+		managedClimb.setRouteGrade(climb.getRouteGrade());
+		managedClimb.setRouteStyle(climb.getRouteStyle());
+		managedClimb.setPitches(climb.getPitches());
+		managedClimb.setDescription(climb.getDescription());
+		managedClimb.setStateAbbreviation(climb.getStateAbbreviation());
+		managedClimb.setAreaName(climb.getAreaName());
+		managedClimb.setAreaName2(climb.getAreaName2());
+		managedClimb.setCragName(climb.getCragName());
+		managedClimb.setAreaLatitude(climb.getAreaLatitude());
+		managedClimb.setAreaLongitude(climb.getAreaLongitude());
+		managedClimb.setTicked(climb.isTicked());
+		managedClimb.setStars(climb.getStars());
+		managedClimb.setDateClimbed(climb.getDateClimbed().format(format));
+		
+		return true;
 	}
 
 	@Override
 	public boolean deleteClimb(Climb climb) {
-		// TODO Auto-generated method stub
-		return false;
+		em.remove(climb);
+		return true;
 	}
 	
 	

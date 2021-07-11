@@ -13,6 +13,16 @@
 	<p><a href="home.do">Home</a></p>
 
 	<h1 class="display-2">${climb.routeName }</h1>
+	
+	<form action="updateForm.do" method="GET">
+		<input id="id" type="hidden" value=${climb.id } name="id">
+ 		<input type= "submit" class="btn btn-outline-secondary btn-lg" value="Update">
+	</form>
+	
+	<form action="deleteClimb.do" method="GET">
+		<input id="id" type="hidden" value=${climb.id } name="id">
+ 		<input type= "submit" class="btn btn-outline-secondary btn-lg" value="Delete">
+	</form>
 
 </body>
 </html>
