@@ -2,6 +2,7 @@ package com.skilldistillery.climbs.entities;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -55,7 +56,7 @@ public class Climb {
 
 	@Column(name = "date_climbed")
 	private LocalDate dateClimbed;
-
+	
 	@Column(name = "date_record_created")
 	private LocalDateTime dateRecordCreated;
 
@@ -104,7 +105,7 @@ public class Climb {
 		return pitches;
 	}
 
-	public void setPitches(int pitches) {
+	public void setPitches(Integer pitches) {
 		this.pitches = pitches;
 	}
 
@@ -152,7 +153,7 @@ public class Climb {
 		return areaLatitude;
 	}
 
-	public void setAreaLatitude(double areaLatitude) {
+	public void setAreaLatitude(Double areaLatitude) {
 		this.areaLatitude = areaLatitude;
 	}
 
@@ -160,7 +161,7 @@ public class Climb {
 		return areaLongitude;
 	}
 
-	public void setAreaLongitude(double areaLongitude) {
+	public void setAreaLongitude(Double areaLongitude) {
 		this.areaLongitude = areaLongitude;
 	}
 
@@ -168,7 +169,7 @@ public class Climb {
 		return ticked;
 	}
 
-	public void setTicked(boolean ticked) {
+	public void setTicked(Boolean ticked) {
 		this.ticked = ticked;
 	}
 
@@ -176,16 +177,21 @@ public class Climb {
 		return stars;
 	}
 
-	public void setStars(int stars) {
+	public void setStars(Integer stars) {
 		this.stars = stars;
 	}
 
 	public LocalDate getDateClimbed() {
 		return dateClimbed;
 	}
-
-	public void setDateClimbed(LocalDate dateClimbed) {
-		this.dateClimbed = dateClimbed;
+	
+	public void setDateClimbed(String dateClimbed) {
+		try {
+			DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+			this.dateClimbed = LocalDate.parse(dateClimbed, format);
+		} catch (Exception e) {
+			this.dateClimbed = null;
+		}
 	}
 
 	public LocalDateTime getDateRecordCreated() {

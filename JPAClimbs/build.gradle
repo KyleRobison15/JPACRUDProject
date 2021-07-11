@@ -41,6 +41,7 @@ dependencies {
   implementation "org.hibernate:hibernate-c3p0:$hibernateVersion"
   
   testImplementation("org.junit.jupiter:junit-jupiter:$junit5Version")
+  
 }
 
 test {

@@ -14,7 +14,7 @@
 	<h1 class="display-2">Personal Climbing Site</h1>
 	
 	
-		<a href="home.do"><button type="button" class="btn btn-outline-secondary">Send it!</button></a>
+		<a href="home.do" class="btn btn-outline-secondary">Send it!</a>
 	
 
 
