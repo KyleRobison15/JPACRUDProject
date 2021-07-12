@@ -55,7 +55,7 @@
 					</div>
 					<div class="col">
 						<div class="container">
-							<form class="d-flex" action="getClimbs.do" method="GET">
+							<form class="d-flex" action="getClimbById.do" method="GET">
 								<input class="form-control me-2" type="search"
 									placeholder="ID Search" name="id" aria-label="Search">
 								<button class="btn btn-outline-success" type="submit">Search</button>

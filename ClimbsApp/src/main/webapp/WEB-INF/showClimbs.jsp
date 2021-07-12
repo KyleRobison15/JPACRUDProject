@@ -17,9 +17,18 @@
 		<c:when test="${! empty climbs }">
 
 			<c:forEach items="${climbs }" var="climb">
-
+				
 				<div class="card" style="width: 18rem;">
-					<img src="..." class="card-img-top" alt="...">
+					
+					<c:choose>
+						<c:when test="${climb.ticked == true }">
+							<img src="" class="card-img-top" alt="...">
+						</c:when>
+						<c:otherwise>
+							<img src="https://images.pexels.com/photos/1887836/pexels-photo-1887836.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" class="card-img-top" alt="...">
+						</c:otherwise>
+					</c:choose>
+					
 					<div class="card-body">
 						<h5 class="card-title">${climb.routeName }</h5>
 						<p class="card-text">Some quick example text to build on the
