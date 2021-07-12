@@ -40,7 +40,7 @@
 					<li class="nav-item"><a class="nav-link" href="getClimbs.do">All Climbs</a></li>
 					<li class="nav-item"><a class="nav-link" href="getCompletedClimbs.do">Completed Climbs</a></li>
 					<li class="nav-item"><a class="nav-link" href="getToDoClimbs.do"> Future Climbs</a></li>
-					<li class="nav-item"><a class="btn btn-outline-secondary" href="addForm.do"> Add Climb</a></li>
+					<li class="nav-item"><a class="btn btn-outline-dark" href="addForm.do"> Add Climb</a></li>
 				</ul>
 				
 				<div class="row align-items-end">

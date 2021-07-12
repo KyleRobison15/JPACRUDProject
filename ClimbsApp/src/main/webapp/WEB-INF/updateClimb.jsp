@@ -7,9 +7,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Update Climb</title>
+<link rel="stylesheet" href="css/addupdate.css">
 </head>
 <body>
 
+<div class="container">
+	<div class="form">
 	<form action="updateClimb.do" method="POST">
 	
 <!-- ///////////////////////////////////////////// CLIMB ID (HIDDEN) ////////////////////////////////////////////////////////////// -->
@@ -136,7 +139,7 @@
   				<label for="description" class="col-sm-2 col-form-label">Description</label>
   			<div class="col-sm-10">
   			
-  				<textarea class="form-control" name="description" id="description" rows="8" placeholder="${climb.description }"></textarea>
+  				<textarea class="form-control" name="description" id="description" rows="4" placeholder="${climb.description }"></textarea>
   				
   			</div>
 		</div>
@@ -252,10 +255,11 @@
 <!-- ///////////////////////////////////////////// SUBMIT ////////////////////////////////////////////////////////////// -->
 
 		<div class="row mb-3">	
-				<button type="submit" class="btn btn-outline-secondary">Update Climb</button>
+				<button type="submit" class="btn btn-outline-dark">Update Climb</button>
 		</div>
 
 	</form>
-
+</div>
+</div>
 </body>
 </html>

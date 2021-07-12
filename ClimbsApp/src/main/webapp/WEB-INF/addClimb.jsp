@@ -1,16 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="styles.jsp"%>
+<%@ include file="navbar.jsp"%>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Add Climb</title>
+<link rel="stylesheet" href="css/addupdate.css">
 </head>
 <body>
 
-	<p><a href="home.do">Home</a></p>
-
+<div class="container .px-4">
+<div class="row gx-5">
+<div class="col">
+<div class="form">
 	<form action="addClimb.do" method="post">
 <!-- ///////////////////////////////////////////// ROUTE NAME ////////////////////////////////////////////////////////////// -->
 
@@ -132,7 +136,7 @@
   				<label for="description" class="col-sm-2 col-form-label">Description</label>
   			<div class="col-sm-10">
   			
-  				<textarea class="form-control" name="description" id="description" rows="8"></textarea>
+  				<textarea class="form-control" name="description" id="description" rows="4"></textarea>
   				
   			</div>
 		</div>
@@ -248,10 +252,13 @@
 <!-- ///////////////////////////////////////////// SUBMIT ////////////////////////////////////////////////////////////// -->
 
 		<div class="row mb-3">	
-				<button type="submit" class="btn btn-outline-secondary">Add Climb</button>
+				<button type="submit" class="btn btn-outline-dark">Add Climb</button>
 		</div>
 
 	</form>
-
+</div>
+</div>
+</div>
+</div>
 </body>
 </html>
