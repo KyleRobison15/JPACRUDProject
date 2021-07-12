@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ include file="styles.jsp"%>
+<%@ include file="navbar.jsp" %>
 
 <!DOCTYPE html>
 <html>
@@ -8,8 +9,6 @@
 <title>Update Climb</title>
 </head>
 <body>
-
-	<p><a href="home.do">Home</a></p>
 
 	<form action="updateClimb.do" method="POST">
 	

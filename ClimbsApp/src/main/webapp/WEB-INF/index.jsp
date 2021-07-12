@@ -1,23 +1,23 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ include file="styles.jsp" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ include file="styles.jsp"%>
 
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Climbs Site</title>
+
+<title>Lets Climb!</title>
+
+<link rel="stylesheet" href="css/indexstyles.css">
+
 </head>
 <body>
 
-	<h1 class="display-1">Kyle Robison</h1>
-	<h1 class="display-2">Personal Climbing Site</h1>
-	
-	
-		<a href="home.do" class="btn btn-outline-secondary">Send it!</a>
-	
-
-
+	<div class="banner">
+		<a href="home.do" class="btn btn-outline-dark btn-lg" id="launch">Let's Go Climbing!</a>
+	</div>
 
 </body>
 </html>

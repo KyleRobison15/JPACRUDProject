@@ -34,7 +34,7 @@ public class ClimbDAOImpl implements ClimbDAO {
 	}
 
 	@Override
-	public List<Climb> getCompletedClimbs(boolean isTicked) {
+	public List<Climb> getCompletedClimbs() {
 		
 		jpql = "SELECT c FROM Climb c WHERE c.ticked = true";
 		List<Climb> climbs = em.createQuery(jpql, Climb.class).getResultList();
@@ -43,7 +43,7 @@ public class ClimbDAOImpl implements ClimbDAO {
 	}
 
 	@Override
-	public List<Climb> getToDoClimbs(boolean isTicked) {
+	public List<Climb> getToDoClimbs() {
 		
 		jpql = "SELECT c FROM Climb c WHERE c.ticked = false";
 		List<Climb> climbs = em.createQuery(jpql, Climb.class).getResultList();

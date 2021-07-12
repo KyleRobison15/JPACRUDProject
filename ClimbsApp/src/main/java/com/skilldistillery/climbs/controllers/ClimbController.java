@@ -18,7 +18,7 @@ public class ClimbController {
 	@Autowired
 	private ClimbDAO dao;
 	
-	@RequestMapping(path = "/")
+	@RequestMapping(path = {"/","index.do"})
 	public String index(Model model) {
 //		model.addAttribute("climb", dao.findById(1)); // Injected a model, hardcoded a 1 for id - Just for testing the controller and jsp files
 		return"index";
@@ -38,6 +38,18 @@ public class ClimbController {
 	@RequestMapping(path = "getClimbs.do", params = "keyword")
 	public String getClimbs(String keyword, Model model) {		
 		model.addAttribute("climbs", dao.findByKeyword(keyword));
+		return"showClimbs";
+	}
+	
+	@RequestMapping(path = "getCompletedClimbs.do")
+	public String getCompletedClimbs(Model model) {		
+		model.addAttribute("climbs", dao.getCompletedClimbs());
+		return"showClimbs";
+	}
+	
+	@RequestMapping(path = "getToDoClimbs.do")
+	public String getToDoClimbs(Model model) {		
+		model.addAttribute("climbs", dao.getToDoClimbs());
 		return"showClimbs";
 	}
 	
