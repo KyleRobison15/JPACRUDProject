@@ -77,41 +77,41 @@ public class ClimbDAOImpl implements ClimbDAO {
 		
 		// Conditional logic to set fields to null based on form input
 		
-		if (climb.getRouteGrade().equals("Select a Grade")) {
-			climb.setRouteGrade(null);
-		}
-		
-		if (climb.getStateAbbreviation().equals("Select a State")) {
-			climb.setStateAbbreviation(null);
-		}
-		
-		if (climb.getAreaLatitude() == 0.00) {
-			climb.setAreaLatitude(null);
-		}
-		
-		if (climb.getAreaLongitude() == 0.00) {
-			climb.setAreaLongitude(null);
-		}
-		
-		if (climb.getStars() == 0) {
-			climb.setStars(null);
-		}
-		
-		if (climb.getDescription().isEmpty()) {
-			climb.setDescription(null);
-		}
-		
-		if (climb.getAreaName().isEmpty()) {
-			climb.setAreaName(null);
-		}
-		
-		if (climb.getAreaName2().isEmpty()) {
-			climb.setAreaName2(null);
-		}
-		
-		if (climb.getCragName().isEmpty()) {
-			climb.setCragName(null);
-		}
+//		if (climb.getRouteGrade().equals("Select a Grade")) {
+//			climb.setRouteGrade(null);
+//		}
+//		
+//		if (climb.getStateAbbreviation().equals("Select a State")) {
+//			climb.setStateAbbreviation(null);
+//		}
+//		
+//		if (climb.getAreaLatitude() == 0.00) {
+//			climb.setAreaLatitude(null);
+//		}
+//		
+//		if (climb.getAreaLongitude() == 0.00) {
+//			climb.setAreaLongitude(null);
+//		}
+//		
+//		if (climb.getStars() == 0) {
+//			climb.setStars(null);
+//		}
+//		
+//		if (climb.getDescription().isEmpty()) {
+//			climb.setDescription(null);
+//		}
+//		
+//		if (climb.getAreaName().isEmpty()) {
+//			climb.setAreaName(null);
+//		}
+//		
+//		if (climb.getAreaName2().isEmpty()) {
+//			climb.setAreaName2(null);
+//		}
+//		
+//		if (climb.getCragName().isEmpty()) {
+//			climb.setCragName(null);
+//		}
 		
 		// Insert climb into database
 		em.persist(climb);

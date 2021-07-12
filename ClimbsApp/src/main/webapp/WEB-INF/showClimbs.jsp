@@ -47,7 +47,7 @@
 											<c:when test="${climb.ticked == true }">
 												<div class=col>
 													<img id="checkmark" alt=""
-														src="/media/photos/checkmark.jpg">
+														src="media/photos/checkmark.jpg">
 												</div>
 											</c:when>
 											<c:otherwise>
