@@ -3,7 +3,16 @@ body {
 	height: 100vh;
 	background-image: linear-gradient(rgba(255, 255, 255, 0.35),
 			       	rgba(255, 255, 255, 0.35)),
-		url(https://images.pexels.com/photos/1729927/pexels-photo-1729927.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+		url(/media/photos/DesertMonoliths.jpg);
 	background-size: cover;
 	background-position: center;
+}
+
+.col-10{
+	padding: 2%;
+	background: rgba(255,255,255,0.7);
+}
+
+.container{
+	padding:2%;
 }

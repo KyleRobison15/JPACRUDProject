@@ -1,5 +1,6 @@
 package com.skilldistillery.climbs.data;
 
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
@@ -27,7 +28,7 @@ public class ClimbDAOImpl implements ClimbDAO {
 	@Override
 	public List<Climb> getAllClimbs() {
 		
-		jpql = "SELECT c FROM Climb c";
+		jpql = "SELECT c FROM Climb c ORDER BY c.routeName";
 		List<Climb> climbs = em.createQuery(jpql, Climb.class).getResultList();
 		
 		return climbs;
@@ -36,7 +37,7 @@ public class ClimbDAOImpl implements ClimbDAO {
 	@Override
 	public List<Climb> getCompletedClimbs() {
 		
-		jpql = "SELECT c FROM Climb c WHERE c.ticked = true";
+		jpql = "SELECT c FROM Climb c WHERE c.ticked = true ORDER BY c.routeName";
 		List<Climb> climbs = em.createQuery(jpql, Climb.class).getResultList();
 		
 		return climbs;
@@ -45,7 +46,7 @@ public class ClimbDAOImpl implements ClimbDAO {
 	@Override
 	public List<Climb> getToDoClimbs() {
 		
-		jpql = "SELECT c FROM Climb c WHERE c.ticked = false";
+		jpql = "SELECT c FROM Climb c WHERE c.ticked = false ORDER BY c.routeName";
 		List<Climb> climbs = em.createQuery(jpql, Climb.class).getResultList();
 		
 		return climbs;
@@ -120,6 +121,8 @@ public class ClimbDAOImpl implements ClimbDAO {
 	@Override
 	public boolean updateClimb(Climb climb) {
 		DateTimeFormatter format = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+		String now = LocalDate.now().format(format);
+		
 		Climb managedClimb = em.find(Climb.class, climb.getId());
 		managedClimb.setRouteName(climb.getRouteName());
 		managedClimb.setRouteGrade(climb.getRouteGrade());
@@ -134,7 +137,12 @@ public class ClimbDAOImpl implements ClimbDAO {
 		managedClimb.setAreaLongitude(climb.getAreaLongitude());
 		managedClimb.setTicked(climb.isTicked());
 		managedClimb.setStars(climb.getStars());
-		managedClimb.setDateClimbed(climb.getDateClimbed().format(format));
+		
+		if (climb.getDateClimbed() == null) {
+			managedClimb.setDateClimbed(now);
+		} else {
+			managedClimb.setDateClimbed(climb.getDateClimbed().format(format));
+		}
 		
 		return true;
 	}

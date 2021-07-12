@@ -174,7 +174,11 @@ public class Climb {
 	}
 
 	public int getStars() {
-		return stars;
+		try {
+			return stars;
+		} catch (Exception e) {
+			return 0;
+		}
 	}
 
 	public void setStars(Integer stars) {
@@ -182,7 +186,12 @@ public class Climb {
 	}
 
 	public LocalDate getDateClimbed() {
-		return dateClimbed;
+		LocalDate now = LocalDate.now();
+		try {
+			return dateClimbed;
+		} catch (Exception e) {
+			return now;
+		}
 	}
 	
 	public void setDateClimbed(String dateClimbed) {

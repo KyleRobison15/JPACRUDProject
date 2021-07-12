@@ -8,37 +8,60 @@
 <head>
 <meta charset="UTF-8">
 <title>All Climbs</title>
+<link rel="stylesheet" href="css/showClimbs.css">
 </head>
 <body>
-
-	<h1 class="display-2">Climbs</h1>
 
 	<c:choose>
 		<c:when test="${! empty climbs }">
 
-			<c:forEach items="${climbs }" var="climb">
-				
-				<div class="card" style="width: 18rem;">
-					
-					<c:choose>
-						<c:when test="${climb.ticked == true }">
-							<img src="" class="card-img-top" alt="...">
-						</c:when>
-						<c:otherwise>
-							<img src="https://images.pexels.com/photos/1887836/pexels-photo-1887836.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" class="card-img-top" alt="...">
-						</c:otherwise>
-					</c:choose>
-					
-					<div class="card-body">
-						<h5 class="card-title">${climb.routeName }</h5>
-						<p class="card-text">Some quick example text to build on the
-							card title and make up the bulk of the card's content.</p>
-						<a href="getClimbById.do?id=${climb.id }"
-							class="btn btn-outline-secondary">View</a>
-					</div>
-				</div>
+			<div class="container">
+				<div class="row row-cols-3 row-cols-lg-4 g-2 g-lg-3">
 
-			</c:forEach>
+					<c:forEach items="${climbs }" var="climb">
+						<div class="col">
+
+							<div class="card" style="width: 18rem;">
+
+								<img
+									src="https://jimmychin.com/wp-content/uploads/2016/10/Alex-Honnold_Bugaboos-1200x800.jpg"
+									class="card-img-top" alt="...">
+
+								<div class="card-body">
+									<div class="row">
+										<div class="col-9">
+											<h5 class="card-title">${climb.routeName }</h5>
+										</div>
+										<div class="col">
+											<span class="badge bg-dark">ID: ${climb.id }</span>
+										</div>
+									</div>
+									<p class="card-text">${climb.routeGrade }</p>
+									<p class="card-text">${climb.routeStyle }</p>
+									<div class=row>
+										<div class=col-9>
+											<a href="getClimbById.do?id=${climb.id }"
+												class="btn btn-outline-secondary">View</a>
+										</div>
+										<c:choose>
+											<c:when test="${climb.ticked == true }">
+												<div class=col>
+													<img id="checkmark" alt=""
+														src="/media/photos/checkmark.jpg">
+												</div>
+											</c:when>
+											<c:otherwise>
+											<div class="col"></div>
+											</c:otherwise>
+										</c:choose>
+									</div>
+								</div>
+							</div>
+						</div>
+					</c:forEach>
+
+				</div>
+			</div>
 
 		</c:when>
 
