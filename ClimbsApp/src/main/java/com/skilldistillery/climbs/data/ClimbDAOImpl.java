@@ -61,7 +61,9 @@ public class ClimbDAOImpl implements ClimbDAO {
 				+ " OR c.stateAbbreviation LIKE :keyword"
 				+ " OR c.areaName LIKE :keyword"
 				+ " OR c.areaName2 LIKE :keyword"
-				+ " OR c.cragName LIKE :keyword";
+				+ " OR c.cragName LIKE :keyword"
+				+ " OR c.routeGrade LIKE :keyword"
+				+ " OR c.routeStyle LIKE :keyword";
 		
 		List<Climb> climbs = em.createQuery(jpql, Climb.class)
 				.setParameter("keyword", "%" + keyword + "%")
