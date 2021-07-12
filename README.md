@@ -24,7 +24,7 @@ One interesting note about the update operations in particular, is that I had to
 To put it simply, I learned a ton from completing this project. Among many many other things, here are some of the noteworthy lessons I learned:
 
 1. It's easy to get caught up on the front end before the back end functionality is sound.
-I got lost in the sauce on the front end a few times only to find out some functionality items weren't completely working. That made me realized pretty quickly how important it is to test the back end functionality thoroughly before diving into the styling. The site can look amazing.. but does it work?
+I got lost in the sauce on the front end a few times only to find out some functionality items weren't completely working. That made me realize pretty quickly how important it is to test the back end functionality thoroughly before diving into the styling. The site can look amazing.. but does it work?
 
 2. Form compatibility with the Java entity and database fields is critical!
 I spent a lot of time getting the form inputs for adding and updating climbs to map properly to my java entities. Some of this could have been avoided with a more thought out design from the outset of the design process for both my Java entities and my database data types.
