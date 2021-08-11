@@ -4,6 +4,8 @@
 ## Project Overview
 This project is a fully functional, full stack, dynamic web application deployed to an Amazon EC2 web server. Users can view or add information about specific rock climbs, as well as update or delete that information from a database. It is intended to be used as a way of keeping track of climbs the user has done, and climbs the user would like to do in the future.
 
+## How to run
+
 ### Spring MVC and Spring Boot
 As with any dynamic web page, this program had to handle many tasks as a result of the request/response cycle. The Spring Boot framework made it very efficient to implement my MVC and DAO design patterns in order to create a separation of concerns for handling those various responsibilities.
 
