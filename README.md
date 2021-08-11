@@ -12,6 +12,7 @@ A key highlight of this project is the use of JPA and SQL create, read, update, 
 
 One interesting note about the update operations in particular, is that I had to create a JPA managed entity first before JPA could commit any updates.
 
+### Database Schema Design
 ![Image of MySQL Database Schema](/ClimbsApp/src/main/webapp/media/photos/databaseSchema.jpg)
 
 ### Other Technologies Used
