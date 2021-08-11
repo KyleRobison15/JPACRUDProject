@@ -1,4 +1,5 @@
-# JPACRUDProject
+# Let's Climb (Spring MVC | Spring Boot | JPA CRUD Project)
+![Image of Climbing](https://jimmychin.com/wp-content/uploads/2016/10/Alex-Honnold_SquareSpace-1200x800.jpg)
 
 ## Project Overview
 This project is a fully functional, full stack, dynamic web application deployed to an Amazon EC2 web server. Users can view or add information about specific rock climbs, as well as update or delete that information from a database. It is intended to be used as a way of keeping track of climbs the user has done, and climbs the user would like to do in the future.
@@ -10,6 +11,8 @@ As with any dynamic web page, this program had to handle many tasks as a result 
 A key highlight of this project is the use of JPA and SQL create, read, update, delete (CRUD) operations. This particular website allows the user to not only read from the database but also, insert, update and/or delete climbs from the database. I accomplished this in my model by using JPA to connect to the database and run SQL commands from my application code. This was done by using the Entity Manager class from JPA to persist, update and remove climbs from the database. JPA automatically starts transactions for each of these operations, and will only commit the changes when the method is fully executed with no exceptions.
 
 One interesting note about the update operations in particular, is that I had to create a JPA managed entity first before JPA could commit any updates.
+
+![Image of MySQL Database Schema](/ClimbsApp/src/main/webapp/media/photos/databaseSchema.jpg)
 
 ### Other Technologies Used
 * Front end design using Bootstrap, CSS, and JSP views: Once the back end functionality was completed, I spent about an entire day formatting and designing the user interface for this project. I heavily utilized Bootstrap components and the grid layout system with some CSS sprinkled in.
